@@ -1,0 +1,216 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: #f7f5f2;
+  color: #2b2622;
+}
+
+/* ID selector: sticky top nav */
+#top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #cb202d; /* Zomato-ish red */
+  color: #fff;
+  padding: 12px 24px;
+}
+
+#top-nav h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+#top-nav .tagline {
+  margin: 2px 0 0;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.layout {
+  display: flex;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 16px;
+}
+
+/* Class selector: reusable panel card */
+.panel {
+  background: #fff;
+  border: 1px solid #e3ded7;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+}
+
+#tag-sidebar {
+  flex: 0 0 220px;
+}
+
+#tag-sidebar ul {
+  list-style: none;
+  padding-left: 14px;
+}
+
+#tag-sidebar li {
+  margin: 4px 0;
+}
+
+/* Descendant selector: only buttons inside the sidebar tree */
+#tag-sidebar button.tree-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 2px 4px;
+}
+
+#tag-sidebar ul.collapsed {
+  display: none;
+}
+
+main {
+  flex: 1;
+  min-width: 0;
+}
+
+form label,
+.search-row label {
+  display: block;
+  font-size: 0.85rem;
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+
+form input,
+form textarea,
+.search-row input,
+.search-row select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #cfc8bf;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+form button,
+.search-row button {
+  margin-top: 12px;
+  padding: 8px 16px;
+  background: #cb202d;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover,
+.search-row button:hover {
+  background: #a81a24;
+}
+
+.search-row {
+  margin-bottom: 14px;
+}
+
+.smart-search-row {
+  border-top: 2px dashed #cb202d;
+  padding-top: 12px;
+}
+
+.error-message {
+  background: #fdecea;
+  color: #b3261e;
+  border: 1px solid #f3c2be;
+  padding: 8px 10px;
+  border-radius: 4px;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+#quick-tag-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+#quick-tag-buttons button {
+  margin: 0;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  background: #eee;
+  color: #333;
+}
+
+/* Note card: box model in action */
+.note-card {
+  border: 1px solid #e3ded7;
+  border-radius: 6px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  background: #fffdfb;
+}
+
+.note-card.highlight {
+  border-color: #cb202d;
+  box-shadow: 0 0 0 2px rgba(203, 32, 45, 0.2);
+}
+
+.note-card h3 {
+  margin: 0 0 6px;
+}
+
+.note-card .note-tag {
+  display: inline-block;
+  background: #f0e9e2;
+  color: #6b5c4a;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  margin-bottom: 6px;
+}
+
+.note-card .note-actions button {
+  margin-top: 8px;
+  background: #444;
+}
+
+.ai-panel {
+  margin-top: 10px;
+  padding: 8px 10px;
+  background: #fff7e6;
+  border: 1px dashed #d9a441;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.ai-panel button {
+  margin-top: 6px;
+  background: #d9a441;
+}
+
+#loading-message {
+  font-style: italic;
+  color: #776b5d;
+}
+
+.similarity-score {
+  font-size: 0.75rem;
+  color: #776b5d;
+}
+
+@media (max-width: 600px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  #tag-sidebar {
+    flex: none;
+    width: 100%;
+  }
+}
