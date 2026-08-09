@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Zomato Notes</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header id="top-nav">
+  <h1>Zomato Notes</h1>
+  <p class="tagline">On-call knowledge base</p>
+</header>
+
+<div class="layout">
+
+  <nav id="tag-sidebar" aria-label="Tag categories">
+    <h2>Tags</h2>
+    <div id="category-tree"></div>
+  </nav>
+
+  <main>
+
+    <section id="add-note-section" class="panel">
+      <h2>Add Note</h2>
+      <form id="add-note-form" novalidate>
+        <label for="note-title">Title</label>
+        <input type="text" id="note-title" name="title" />
+
+        <label for="note-content">Content</label>
+        <textarea id="note-content" name="content" rows="3"></textarea>
+
+        <label for="note-tag">Tag</label>
+        <input type="text" id="note-tag" name="tag" placeholder="e.g. work" />
+
+        <div id="form-error" class="error-message" hidden></div>
+
+        <button type="submit">Add Note</button>
+      </form>
+    </section>
+
+   
+
+
+
+    <nav id="tag-sidebar" aria-label="Tag categories"></nav>
+
+    
+      <h2>Search</h2> 
+
+      <div class="search-row">
+        <label for="plain-search">Keyword search</label>
+        <input type="text" id="plain-search" placeholder="Filter notes by keyword or tag..." />
+      </div>
+
+      <div class="search-row">
+        <label for="sort-by-select">Sort by</label>
+        <select id="sort-by-select">
+          <option value="relevance">Relevance</option>
+          <option value="date">Date</option>
+        </select>
+      </div>
+
+      <div class="search-row">
+        <label for="jump-title">Jump to exact title</label>
+        <input type="text" id="jump-title" placeholder="Exact note title..." />
+        <select id="jump-algo">
+          <option value="iterative">iterative</option>
+          <option value="recursive">recursive</option>
+        </select>
+        <button type="button" id="jump-btn">Go</button>
+      </div>
+
+      <div class="search-row">
+        <span>Quick tag jump:</span>
+        <div id="quick-tag-buttons"></div>
+      </div>
+
+      <div class="search-row smart-search-row">
+        <label for="smart-search-input">Smart Search (AI)</label>
+        <input type="text" id="smart-search-input" placeholder="Search by meaning, e.g. 'dinner ideas'..." />
+        <button type="button" id="smart-search-btn">Smart Search</button>
+      </div>
+
+      <div id="lookup-result"></div>
+      <div id="smart-search-result"></div>
+    </section>
+
+    <section id="notes-section" class="panel">
+      <h2>Notes</h2>
+      <div id="loading-message">Loading notes&hellip;</div>
+      <div id="fetch-error" class="error-message" hidden></div>
+      <div id="notes-list"></div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <p>Zomato Notes &mdash; capstone project</p>
+</footer>
+
+
+<script src="mock-data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
